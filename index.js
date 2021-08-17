@@ -46,7 +46,8 @@ app.get('/', (req, res) => {
  * 404 route
  */
 
-app.all('*',(req,res,next) =>{
+app.all('*',(req,res) =>{
+    console.log('404')
     res.render('general/404')
 
 })
