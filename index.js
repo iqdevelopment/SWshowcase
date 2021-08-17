@@ -47,7 +47,6 @@ app.get('/', (req, res) => {
  */
 
 app.all('*',(req,res) =>{
-    console.log('404')
     res.render('general/404')
 
 })
