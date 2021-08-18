@@ -54,7 +54,7 @@ const VehicleListFilter = (props) => {
 
                 newState = { type: typeOfSort, asc: false }
             } else {
-                var newSort = prev.sort(({ [typeOfSort]: a }, { [typeOfSort]: b }) => b + a);
+                var newSort = prev.sort(({ [typeOfSort]: a }, { [typeOfSort]: b }) => a - b);
                 newState = { type: typeOfSort, asc: true }
             }
             return [...newSort]
