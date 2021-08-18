@@ -1,0 +1,18 @@
+.section-link{
+    transition: all 0.5s;
+    text-align: center;
+    &:hover{
+        transform: scale(1.1);
+    }
+    a { 
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
+
+        p {
+            text-align: center;
+            font-size: 25px;
+        }
+    }
+}
+

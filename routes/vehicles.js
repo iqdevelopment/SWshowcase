@@ -1,10 +1,14 @@
 const express = require('express')
 const router = express.Router()
+const {renderVehicleList,renderVehicle } = require('./../controllers/vehicleController')
 
 router.route('/')
-    .get((req,res,next) => {
-        res.render('vehicles/list')
-    })
+    .get(renderVehicleList)
 
+
+router.route('/:id')
+    .get(renderVehicle)
+
+module.exports = router
 
 module.exports = router

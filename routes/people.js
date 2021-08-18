@@ -1,17 +1,14 @@
 const express = require('express')
 const router = express.Router({ mergeParams: true })
-
-
-
-
-
-
+const { renderPeopleList, renderPerson } = require('../controllers/peopleController')
 
 
 
 router.route('/')
-    .get((req,res,next) => {
-        res.render('people/list')
-    })
- 
+    .get(renderPeopleList)
+
+
+router.route('/:id')
+    .get(renderPerson)
+
 module.exports = router

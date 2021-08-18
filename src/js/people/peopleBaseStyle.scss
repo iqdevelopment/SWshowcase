@@ -1,0 +1,42 @@
+$list_even_background: #e9ecef;
+$list_odd_background: #dee2e6;
+
+.person-list {
+    list-style: none;
+    a {
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
+    }
+    li {
+        transition: all 0.5s;
+        text-align: center;
+        &:hover {
+            transform: scale(1.1);
+            border-radius: 2em;
+            
+        }
+        background-color: $list_even_background;
+
+        &:nth-child(2n + 1) {
+            background-color: $list_odd_background;
+        }
+        &:first-child{
+            border-top-left-radius: 2em;
+            border-top-right-radius: 2em;
+        }
+        &:last-child{
+            border-bottom-left-radius: 2em;
+            border-bottom-right-radius: 2em;
+        }
+
+
+        img {
+            max-height: 150px;
+            padding-right: 50px;
+            
+        }
+
+       
+    }
+}

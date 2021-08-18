@@ -1,7 +1,21 @@
 <% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/js/people.css">
 <script type='text/javascript'>
     const people =<%- JSON.stringify(people) %>
-
   </script>
-<div id="root"></div>
+<div id="root">
+  <ul class="person-list">
+    <% for(var i=0; i<people.length; i++) {%>
+      
+          <li>
+            <a href="/people/<%= people[i].url.replace('https://swapi.dev/api/people/','').replace('/','') %>"><div>
+              <img src="<%= people[i].image %>" alt="" srcset=""> <%= people[i].name %>
+            </div>
+            </a>
+            </li>
+        
+    <% } %>
+    </ul>
+
+</div>
 <script src="/js/people.js"></script>
