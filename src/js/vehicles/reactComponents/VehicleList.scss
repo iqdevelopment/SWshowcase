@@ -1,0 +1,29 @@
+$list_even_background: #e9ecef;
+$list_odd_background: #dee2e6;
+$list_header: #023e8a;
+$border_radius: 0.7em;
+.vehicle-list {
+    width: 100%;
+    margin-bottom: 20px;
+
+    tr {
+        background-color: $list_even_background;
+
+        &:nth-child(2n + 1) {
+            background-color: $list_odd_background;
+        }
+
+        td {
+            padding-left: $border_radius;
+            a {
+                text-decoration: none;
+                font-weight: bold;
+                color: black;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -18,7 +18,7 @@ const CustomLoader = () => {
 
 
     return (
-       <div>
+       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '50vh'}}>
            <Loader
         type="ThreeDots"
         color="#00BFFF"

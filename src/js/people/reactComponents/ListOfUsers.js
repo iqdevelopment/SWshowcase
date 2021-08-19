@@ -7,7 +7,6 @@ import getNextItems from '../handlers/handlers';
 
 
 const ListOfUsers = (props) => {
-    console.log(props)
     const [personList, setPersonList] = useState(props.users)
     const [personListPage, setPersonListPage] = useState(1)
     const [hasMoreState, setHasMoreState] = useState(true)

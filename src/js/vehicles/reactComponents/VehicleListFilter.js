@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import './VehicleListFilter.scss'
 
 
 
 const VehicleListFilter = (props) => {
 
     const [sortState, setSortState] = useState({ type: null, asc: true })
+    /*  const [nameState,setNameState] = useState('')
+     const [passengersState,setPassengersState] = useState('')
+     const [manufacturerState,setManufacturerState] = useState('') */
 
 
     /**
@@ -64,11 +68,27 @@ const VehicleListFilter = (props) => {
             return newState
         })
 
+    }
 
-       /*  props.state((prev) => {
-            const newSort = prev.sort(({ cargo_capacity: a }, { cargo_capacity: b }) => b - a);
-            return [...newSort]
-        }) */
+    /**
+     * changes the button style on filtering
+     */
+    const filterStyleChange = (ev) => {
+        console.log(ev.target)
+        const element = ev.target
+        console.log(element.className)
+        if (element.className != 'asc-filter') {
+            const parent = document.querySelector('.vehicle-list-header')
+            const children = parent.querySelectorAll('td')
+            for (let index = 0; index < children.length; index++) {
+                const el = children[index];
+                el.classList =''
+
+            }
+            element.className = 'asc-filter'
+        } else {
+            element.className = 'desc-filter'
+        }
     }
 
 
@@ -79,11 +99,6 @@ const VehicleListFilter = (props) => {
 
     const sortByCapacity = () => {
         sortByNum('passengers')
-        /* props.state((prev) => {
-            const newSort = prev.sort(({ cargo_capacity: a }, { cargo_capacity: b }) => b - a);
-            return [...newSort]
-        }) */
-
     }
 
     const sortByCost = () => {
@@ -94,10 +109,10 @@ const VehicleListFilter = (props) => {
 
 
 
-    return (<tr>
-        <td onClick={sortByName}>Name</td>
-        <td onClick={sortByCapacity}>Cargo Capacity</td>
-        <td onClick={sortByCost}>manufacturer</td>
+    return (<tr className="vehicle-list-header">
+        <td onClick={(ev) => { sortByName(), filterStyleChange(ev) }}>Name</td>
+        <td onClick={(ev) => { sortByCapacity(), filterStyleChange(ev) }}>Passengers</td>
+        <td onClick={(ev) => { sortByCost(), filterStyleChange(ev) }}>manufacturer</td>
     </tr>)
 
 

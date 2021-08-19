@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import InfiniteScroll from 'react-infinite-scroll-component';
-import axios from 'axios';
+import './VehicleList.scss'
 import 'regenerator-runtime/runtime'
 import VehicleListFilter from './VehicleListFilter'
 
@@ -14,7 +13,7 @@ const VehicleList = (props) => {
 
     return (
 
-        <table>
+        <table className="vehicle-list">
             <thead>
             <VehicleListFilter state={setvehicleList}/>
             </thead>
